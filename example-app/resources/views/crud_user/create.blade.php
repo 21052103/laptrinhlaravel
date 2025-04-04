@@ -20,6 +20,20 @@
                             <span class="text-danger">{{ $errors->first('name') }}</span>
                         @endif
                     </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">like</label>
+                        <input type="text" placeholder="Nhập email" id="like" class="form-control form-control-lg" name="like" required>
+                        @if ($errors->has('like'))
+                            <span class="text-danger">{{ $errors->first('like') }}</span>
+                        @endif
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">github</label>
+                        <input type="text" placeholder="Nhập email" id="github" class="form-control form-control-lg" name="github" required>
+                        @if ($errors->has('github'))
+                            <span class="text-danger">{{ $errors->first('github') }}</span>
+                        @endif
+                    </div>
                    
                     <div class="mb-3">
                         <label class="form-label fw-bold">Email</label>

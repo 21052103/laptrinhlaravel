@@ -22,6 +22,17 @@
                         </div>
 
                         <div class="mb-3 text-start">
+                            <label class="form-label fw-bold">like</label>
+                            <input type="text" class="form-control form-control-lg" name="like" value="{{ $user->like }}" required>
+                        </div>
+
+                        <div class="mb-3 text-start">
+                            <label class="form-label fw-bold">github</label>
+                            <input type="text" class="form-control form-control-lg" name="github" value="{{ $user->github }}" required>
+                        </div>
+
+
+                        <div class="mb-3 text-start">
                             <label class="form-label fw-bold">Mật khẩu</label>
                             <input type="password" class="form-control form-control-lg" name="password" required>
                         </div>
