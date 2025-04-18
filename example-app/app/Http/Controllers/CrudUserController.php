@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Hash;
 use Session;
 use App\Models\User;
+use App\Models\Role;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -138,13 +139,24 @@ class CrudUserController extends Controller
     public function listUser()
     {
         if(Auth::check()){
-            $users = User::all();
+            $users = User::paginate(10);
             return view('crud_user.list', ['users' => $users]);
         }
 
         return redirect("login")->withSuccess('You are not allowed to access');
     }
 
+    public function filterByRole($roleName)
+    {
+        // Lấy role theo tên
+        $role = Role::where('name', $roleName)->firstOrFail();
+
+        // Lấy danh sách người dùng có role này
+        $users = $role->users()->paginate(10);  // Giả sử user có quan hệ many-to-many với role
+
+        // Trả về view với dữ liệu
+        return view('crud_user.role_list', compact('users', 'role'));
+    }
     /**
      * Sign out
      */

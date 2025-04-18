@@ -36,3 +36,8 @@ Route::get('signout', [CrudUserController::class, 'signOut'])->name('signout');
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/users/role/{role}', [CrudUserController::class, 'filterByRole'])->name('users.byRole');
+
+
+
