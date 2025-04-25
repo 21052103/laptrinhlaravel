@@ -41,9 +41,9 @@
                             </a>
                         </td>
                         <td>
-                            <a href="{{ route('user.updateUser', ['id' => $user->id]) }}" class="btn btn-sm btn-warning text-white">Edit</a>
-                            <a href="{{ route('user.readUser', ['id' => $user->id]) }}" class="btn btn-sm btn-info text-white">View</a>
-                            <a href="{{ route('user.deleteUser', ['id' => $user->id]) }}" class="btn btn-sm btn-danger text-white">Delete</a>
+                            <a href="{{ route('user.updateUser', ['id' => $user->id]) }}" class="btn btn-sm text-white">Edit</a>
+                            <a href="{{ route('user.readUser', ['id' => $user->id]) }}" class="btn btn-sm text-white">View</a>
+                            <a href="{{ route('user.deleteUser', ['id' => $user->id]) }}" class="btn btn-sm text-white">Delete</a>
                         </td>
                     </tr>
                 @endforeach
