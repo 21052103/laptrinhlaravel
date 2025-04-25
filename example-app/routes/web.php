@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CrudUserController;
 
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -39,5 +41,6 @@ Route::get('/', function () {
 
 Route::get('/users/role/{role}', [CrudUserController::class, 'filterByRole'])->name('users.byRole');
 
+// routes/web.php
 
-
+Route::get('user/{id}/orders', [CrudUserController::class, 'orders'])->name('user.orders');

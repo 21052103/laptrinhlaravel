@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Models\Role;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Order;
 
 /**
  * CRUD User controller
@@ -166,4 +167,18 @@ class CrudUserController extends Controller
 
         return Redirect('login');
     }
+
+    // app/Http/Controllers/CrudUserController.php
+
+public function orders($id)
+{
+    // Lấy người dùng theo ID, cùng với các đơn hàng và các sản phẩm liên quan
+    $user = User::with('orders.products')->findOrFail($id);
+
+    // Trả về view với thông tin người dùng và đơn hàng của họ
+    return view('crud_user.orders_list', compact('user'));
+}
+
+
+
 }
